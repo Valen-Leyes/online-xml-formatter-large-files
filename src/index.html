@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online XML Formatter for Large Files | 100% Private & Fast</title>
+    <meta name="description" content="Format large XML files quickly and locally in your browser. Handles files over 400MB or 500MB in seconds. No file size limits, 100% private, no server uploads.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://w3.org viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Online XML Formatter for Large Files</h1>
+        <p class="subtitle">Format or minify massive XML configurations instantly and locally. Zero server uploads.</p>
+        
+        <!-- ZONA DE CARGA -->
+        <label class="file-zone" id="dropZone">
+            <span style="color: var(--accent); font-weight: bold;">Click to select</span> or drag your XML file here
+            <input type="file" id="fileInput" accept=".xml">
+        </label>
+
+        <!-- NUEVO: PANEL DE CONFIGURACIÓN DE RENDIMIENTO (Clave para SEO y Retención) -->
+        <div class="config-panel" id="configPanel">
+            <h3>⚙️ Optimization Settings</h3>
+            <div class="config-grid">
+                <div class="config-group">
+                    <label for="formatMode">Mode:</label>
+                    <select id="formatMode">
+                        <option value="format" selected>Format (Beautify Structure)</option>
+                        <option value="minify">Minify (Ultra-Fast / Reduce MBs)</option>
+                    </select>
+                </div>
+                
+                <div class="config-group" id="indentGroup">
+                    <label for="indentSpaces">Indentation:</label>
+                    <select id="indentSpaces">
+                        <option value="1">1 Space (Optimized Weight)</option>
+                        <option value="2" selected>2 Spaces (Standard)</option>
+                        <option value="4">4 Spaces (Classic)</option>
+                    </select>
+                </div>
+
+                <div class="config-group" id="lineGroup">
+                    <label for="lineEnding">Line Endings:</label>
+                    <select id="lineEnding">
+                        <option value="\n" selected>LF (\n - Saves Bytes)</option>
+                        <option value="\r\n">CRLF (\r\n - Windows)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div class="status" id="statusText">Ready to process.</div>
+        
+        <div class="progress-bar-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        
+        <!-- MÓDULO DE MONETIZACIÓN Y DESCARGA DINÁMICA -->
+        <div class="donation-box" id="donationBox">
+            <h3>🚀 File Formatted Successfully!</h3>
+            <p>This tool is 100% open-source, private, and runs entirely on your hardware. If it saved your RAM and your time, consider supporting its maintenance!</p>
+            
+            <div class="flex-actions">
+                <a href="https://ko-fi.com/valenleyes" target="_blank" id="kofiBtn" class="btn-kofi">☕ Support on Ko-fi & Download</a>
+                <button class="btn" id="downloadBtn">Download Free Anyway</button>
+            </div>
+        </div>
+        
+        <p class="privacy-note">🔒 Privacy Secured: Processing happens 100% on your device. Your data never leaves your computer.</p>
+    </div>
+    
+    <script type="module" src="js/main.js"></script>
+
+</body>
+</html>

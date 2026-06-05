@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://valen-leyes.github.io/online-xml-formatter-large-files/sitemap.xml
