@@ -139,9 +139,6 @@ input[type="file"] { display: none; }
     margin-top: 2rem;
 }
 
-/* ==========================================
-   PANEL DE CONFIGURACIÓN (NUEVO)
-   ========================================== */
 .config-panel {
     background-color: #111827;
     border: 1px solid #334155;
@@ -198,4 +195,39 @@ input[type="file"] { display: none; }
 .config-group select:disabled {
     cursor: not-allowed;
     background-color: #1e293b;
+}
+
+.seo-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+    margin: 40px 0;
+}
+.seo-content {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #a0aec0; /* Un gris suave para que no compita con la herramienta */
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+.seo-content h2 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.faq-grid {
+    margin-top: 20px;
+}
+.faq-item {
+    margin-bottom: 25px;
+}
+.faq-item h3 {
+    color: var(--accent, #6366f1); /* Reemplaza por tu color de acento actual */
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+.seo-content strong {
+    color: #fff;
 }

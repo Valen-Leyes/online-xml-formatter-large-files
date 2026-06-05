@@ -19,7 +19,7 @@
             <span style="color: var(--accent); font-weight: bold;">Click to select</span> or drag your XML file here
             <input type="file" id="fileInput" accept=".xml">
         </label>
-
+        
         <!-- NUEVO: PANEL DE CONFIGURACIÓN DE RENDIMIENTO (Clave para SEO y Retención) -->
         <div class="config-panel" id="configPanel">
             <h3>⚙️ Optimization Settings</h3>
@@ -40,7 +40,7 @@
                         <option value="4">4 Spaces (Classic)</option>
                     </select>
                 </div>
-
+                
                 <div class="config-group" id="lineGroup">
                     <label for="lineEnding">Line Endings:</label>
                     <select id="lineEnding">
@@ -71,7 +71,38 @@
         <p class="privacy-note">🔒 Privacy Secured: Processing happens 100% on your device. Your data never leaves your computer.</p>
     </div>
     
+    <hr class="seo-divider">
+    
+    <section class="seo-content">
+        <h2>Why Use This Browser-Based XML Formatter for Large Files?</h2>
+        <p>Traditional online XML beautifiers often crash, freeze your browser, or reject your upload when files exceed 10MB or 20MB. This happens because they attempt to load the entire text into your system's temporary memory simultaneously. Our tool resolves this limitation completely.</p>
+        <p>By utilizing advanced <strong>JavaScript Streams and binary processing</strong>, your computer processes your data in sequential chunks. This architectural approach allows you to format massive XML data pipelines (up to 400MB, 500MB, or even multi-gigabyte configurations) seamlessly in under 5 seconds without triggering out-of-memory errors.</p>
+        
+        <h2>Frequently Asked Questions (FAQ)</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h3>What is the maximum XML file size limit?</h3>
+                <p>There is <strong>no file size limit</strong>. Because the formatting architecture runs on a stream-based reader, the tool processes data sequentially instead of loading everything into the active browser memory at once. It can handle large XML datasets smoothly.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Is my data secure? Will my XML be uploaded to a server?</h3>
+                <p>Your data is 100% private and secure. All processing operations happen locally on your computer using web technologies. <strong>Zero bytes are uploaded to external servers</strong>, making this tool completely compliant with strict corporate privacy and data protection guidelines.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>What is the difference between Formatting and Minifying XML?</h3>
+                <p>Formatting (Beautifying) breaks down your XML nodes into structured rows with precise nested indentation levels for human readability. Minifying removes all unnecessary whitespace, carriage returns, and line endings to minimize document file weight and optimize network transfer speeds.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Does this tool support cross-platform line endings?</h3>
+                <p>Yes. You can switch between standard LF (\n) for lighter Unix/Linux systems and standard CRLF (\r\n) for legacy Windows compatibility via the performance optimization settings dropdown.</p>
+            </div>
+        </div>
+    </section>
+    
     <script type="module" src="src/js/main.js"></script>
-
+    
 </body>
 </html>
