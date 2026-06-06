@@ -4,7 +4,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/Valen-Leyes/online-xml-formatter-large-files)](https://github.com/Valen-Leyes/online-xml-formatter-large-files/stargazers)
 [![Support me on Ko-fi](https://img.shields.io/badge/Support%20me%20on%20Ko--fi-F16061?logo=ko-fi&logoColor=white)](https://ko-fi.com/valenleyes)
 
-🔒 Enterprise-Grade Privacy: This application is serverless. Your massive data sheets or database exports never touch a remote server. Everything is processed strictly within your sandbox browser tab.
+🔒 **Enterprise-Grade Privacy:** This application is serverless. Your massive data sheets or database exports never touch a remote server. Everything is processed strictly within your sandbox browser tab.
 
 A high-performance, 100% private, and local browser-based **XML beautifier, minifier, and validator**. Designed specifically to parse, format, and validate massive, heavy, and large XML files (up to 1.5GB+) without crashing your browser or locking the UI thread.
 
