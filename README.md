@@ -15,6 +15,10 @@ If you are looking for an open-source alternative to standard web tools that fre
 ---
 
 ## Why use this XML Formatter tool?
+
+### ⚡ Quick Architecture TL;DR
+[Massive XML File] ➡️ [ReadableStream (4MB Chunks)] ➡️ [Web Worker Parsing Thread] ➡️ [IndexedDB Local Cache] ➡️ [Service Worker Interception Download]
+
 Standard online tools fail when a file exceeds a few megabytes. This **large file XML formatter tool** solves this by using client-side processing, making it the perfect developer tool for big datasets, logs, and database exports.
 
 ## Key Features

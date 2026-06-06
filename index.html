@@ -94,28 +94,29 @@
             <h2>Frequently Asked Questions (FAQ)</h2>
             <div class="faq-grid">
                 <div class="faq-item">
-                    <h3>What is the maximum XML file size limit?</h3>
-                    <p>While our stream-based reader bypasses active RAM limitations, the real maximum size is bound by your <strong>browser's local IndexedDB quota</strong>. Most desktop environments running Chrome, Edge, or Firefox will comfortably process files up to 1.5GB or 2GB. Other browsers (like Safari) might encounter stricter local hardware limits around 1GB.</p>
+                    <h3>How can I format a 1GB+ XML file without crashing my browser?</h3>
+                    <p>Most web tools freeze your active UI thread when reading big data. Our <strong>online xml formatter for large files</strong> solves this by using HTML5 <code>ReadableStream</code> to process data in 4MB chunks, offloading the heavy parsing to a background <code>Web Worker</code>, and caching states in <code>IndexedDB</code>. This keeps your system memory clean and stable.</p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3>Is my data secure? Will my XML be uploaded to a server?</h3>
-                    <p>Your data is 100% private and secure. All processing operations happen locally on your computer using web technologies. <strong>Zero bytes are uploaded to external servers</strong>, making this tool completely compliant with strict corporate privacy and data protection guidelines.</p>
+                    <h3>Is it safe to upload confidential XML database exports here?</h3>
+                    <p>Yes, 100% safe. This application is completely serverless and runs entirely client-side on your local machine using <code>Uint8Array</code>. Your confidential XML database exports, logs, or sensitive enterprise files are never uploaded, saved, or sent to any remote server. Your privacy is secured by absolute local isolation.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What is the maximum XML file size limit?</h3>
+                    <p>While our stream-based reader bypasses active RAM limitations, the real maximum size is bound by your <strong>browser's local IndexedDB quota</strong>. Most desktop environments running Chrome, Edge, or Firefox will comfortably process files up to 1.5GB or 2GB. Other browsers (like Safari) might encounter stricter local hardware limits around 1GB.</p>
                 </div>
                 
                 <div class="faq-item">
                     <h3>What is the difference between Formatting and Minifying XML?</h3>
                     <p>Formatting (Beautifying) breaks down your XML nodes into structured rows with precise nested indentation levels for human readability. Minifying removes all unnecessary whitespace, carriage returns, and line endings to minimize document file weight and optimize network transfer speeds.</p>
                 </div>
-                
-                <div class="faq-item">
-                    <h3>Does this tool support cross-platform line endings?</h3>
-                    <p>Yes. You can switch between standard LF (\n) for lighter Unix/Linux systems and standard CRLF (\r\n) for legacy Windows compatibility via the performance optimization settings dropdown.</p>
-                </div>
             </div>
         </section>
         
         <script type="module" src="src/js/main.js"></script>
         
-</body>
-</html>
+    </body>
+    </html>
+    
