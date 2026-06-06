@@ -10,7 +10,7 @@ A high-performance, 100% private, and local browser-based **XML beautifier, mini
 
 If you are looking for an open-source alternative to standard web tools that freeze with big data, this offline-first solution processes everything locally and safely.
 
-👉 **Live Demo:** [https://valen-leyes.github.io/online-xml-formatter-large-files](https://valen-leyes.github.io/online-xml-formatter-large-files)
+👉 **[Try the Live Demo here!](https://valen-leyes.github.io/online-xml-formatter-large-files)**
 
 ---
 
