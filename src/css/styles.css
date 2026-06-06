@@ -231,3 +231,51 @@ input[type="file"] { display: none; }
 .seo-content strong {
     color: #fff;
 }
+
+/* --- NUEVOS ESTILOS PARA REPOSITORIO GITHUB --- */
+.main-header {
+    width: 100%;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1000px; /* Alineado con el ancho de tu contenido SEO */
+    display: flex;
+    justify-content: flex-end; /* Lo empuja a la esquina superior derecha */
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #a0aec0; /* Gris sutil por defecto */
+    text-decoration: none;
+    font-family: sans-serif; /* Cambiar por tu fuente si usas una específica */
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s ease, transform 0.2s ease;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.03); /* Fondo casi invisible */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.github-link:hover {
+    color: #ffffff; /* Brilla en blanco al pasar el mouse */
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+/* Ajuste móvil para que no se rompa el diseño */
+@media (max-width: 600px) {
+    .header-container {
+        justify-content: center; /* Se centra en pantallas pequeñas */
+    }
+}
