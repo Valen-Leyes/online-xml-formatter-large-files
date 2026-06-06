@@ -6,7 +6,7 @@
 
 🔒 Enterprise-Grade Privacy: This application is serverless. Your massive data sheets or database exports never touch a remote server. Everything is processed strictly within your sandbox browser tab.
 
-A high-performance, 100% private, and local browser-based **XML beautifier, formatter, and minifier**. Designed specifically to parse, format, and validate massive, heavy, and large XML files (up to 1.5GB+) without crashing your browser or locking the UI thread.
+A high-performance, 100% private, and local browser-based **XML beautifier, minifier, and validator**. Designed specifically to parse, format, and validate massive, heavy, and large XML files (up to 1.5GB+) without crashing your browser or locking the UI thread.
 
 If you are looking for an open-source alternative to standard web tools that freeze with big data, this offline-first solution processes everything locally and safely.
 
