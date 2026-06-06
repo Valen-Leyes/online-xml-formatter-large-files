@@ -19,13 +19,19 @@ Standard online tools fail when a file exceeds a few megabytes. This **large fil
 * **Strict Minifier & Validator:** Reduce megabytes by stripping whitespaces and validating tag structures.
 * **Super Fast Performance:** Pure vanilla JavaScript leveraging `TextDecoder`, `ReadableStream`, and custom buffering.
 
-## 🧠 Architecture & Performance Breakdown
+## 🧠 Architecture & Performance
 
-Processing a 500MB+ text file in a browser tab usually results in an out-of-memory crash because string concatenation in JavaScript clones objects in the V8 heap. This tool circumvents that limitation through three technical choices:
+Processing XML files larger than 1.5 GB in a browser tab usually freezes the screen or causes out-of-memory crashes. This tool avoids those issues using four engineering solutions:
 
-1. **Multiprocessor Threading (Web Workers):** The heavy tokenization loop is fully offloaded to a background `Worker` thread, keeping the user interface operating smoothly at 60 FPS.
-2. **Backpressure-Safe Remainder Handling:** Input files are processed as a `ReadableStream`. The engine dynamically looks for safe structural boundary points (`>`) before chunk tokenization to ensure XML tree components never break across chunks.
-3. **Binary Pre-allocation:** Instead of accumulation via JavaScript string variables, chunks are encoded into `Uint8Array` binary blocks instantly. The final data structural build uses a low-level native `Blob` wrapper to drop memory allocation requirements by half.
+* **Multiprocessor Threading (Web Workers):** Heavy text parsing runs entirely in a background thread. This keeps the user interface running smoothly at 60 FPS.
+* **Backpressure-Safe Handling:** Input files are read chunk-by-chunk as a native `ReadableStream`. The engine searches for structural boundary tags (`>`) so XML nodes never break across stream boundaries.
+* **IndexedDB Inter-Thread Caching:** Processed binary blocks are streamed instantly into a local `IndexedDB` layer. This avoids accumulating gigabytes of data in the browser's RAM.
+* **Paced Service Worker Delivery:** A background `Service Worker` pulls data blocks from `IndexedDB` on-demand. It safely caps the download rate between 70 MB/s and 110 MB/s to prevent the host computer from freezing.
+
+## 💾 Storage Management & Precision UX
+
+* **Accurate Progress Tracking:** The engine computes the exact file size before the download starts. This provides a clean `Content-Length` header to the browser for a perfect progress bar.
+* **Automated Disk Purge:** As soon as the file download finishes, a production hook deletes the temporary `IndexedDB` store instantly to keep the user's hard drive spotless.
 
 ## How to use this repository
 1. Open the **Live Demo** link above.

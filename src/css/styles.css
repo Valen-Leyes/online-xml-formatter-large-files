@@ -9,6 +9,7 @@
     --btn-kofi-hover: #ef4444;
     --success: #10b981;
 }
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background-color: var(--bg);
@@ -22,6 +23,7 @@ body {
     padding: 1rem;
     box-sizing: border-box;
 }
+
 .container {
     background-color: var(--card);
     padding: 2.5rem;
@@ -32,10 +34,11 @@ body {
     text-align: center;
     transition: all 0.3s ease;
 }
+
 h1 { font-size: 1.6rem; color: var(--accent); margin-top: 0; margin-bottom: 0.5rem; }
 .subtitle { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem; line-height: 1.4; }
 
-/* Zona de carga mejorada */
+/* File Upload Zone */
 .file-zone {
     display: block;
     border: 2px dashed #475569;
@@ -45,16 +48,18 @@ h1 { font-size: 1.6rem; color: var(--accent); margin-top: 0; margin-bottom: 0.5r
     background-color: #111827;
     transition: all 0.2s ease;
 }
+
 .file-zone.dragover {
     border-color: var(--accent);
     background-color: #1e293b;
     transform: scale(1.02);
 }
+
 input[type="file"] { display: none; }
 
 .status { margin-top: 1.5rem; font-size: 0.95rem; color: var(--text-muted); font-weight: 500; }
 
-/* Barra de progreso para archivos grandes */
+/* Linear Progress Bar */
 .progress-bar-container {
     width: 100%;
     background-color: #111827;
@@ -63,6 +68,7 @@ input[type="file"] { display: none; }
     display: none;
     overflow: hidden;
 }
+
 .progress-bar {
     height: 6px;
     width: 0%;
@@ -70,7 +76,7 @@ input[type="file"] { display: none; }
     transition: width 0.1s linear;
 }
 
-/* Sección de descarga y donación asíncrona */
+/* Post-Processing Actions Section */
 .donation-box {
     display: none;
     background: #111827;
@@ -80,10 +86,12 @@ input[type="file"] { display: none; }
     margin-top: 1.5rem;
     animation: fadeIn 0.4s ease forwards;
 }
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
 .donation-box h3 { margin-top: 0; color: var(--success); font-size: 1.3rem; }
 .donation-box p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
 
@@ -106,6 +114,7 @@ input[type="file"] { display: none; }
     width: 100%;
     box-sizing: border-box;
 }
+
 .btn:hover { background-color: var(--accent-hover); }
 
 .btn-kofi {
@@ -120,6 +129,7 @@ input[type="file"] { display: none; }
     transition: background 0.2s;
     box-sizing: border-box;
 }
+
 .btn-kofi:hover { background-color: var(--btn-kofi-hover); }
 
 .btn-secondary {
@@ -131,6 +141,7 @@ input[type="file"] { display: none; }
     cursor: pointer;
     margin-top: 0.5rem;
 }
+
 .btn-secondary:hover { color: var(--text); }
 
 .privacy-note {
@@ -139,6 +150,7 @@ input[type="file"] { display: none; }
     margin-top: 2rem;
 }
 
+/* Config Controls Component */
 .config-panel {
     background-color: #111827;
     border: 1px solid #334155;
@@ -166,7 +178,7 @@ input[type="file"] { display: none; }
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
-    transition: opacity 0.2s ease; /* Suaviza el cambio visual al deshabilitar */
+    transition: opacity 0.2s ease;
 }
 
 .config-group label {
@@ -197,42 +209,49 @@ input[type="file"] { display: none; }
     background-color: #1e293b;
 }
 
+/* SEO Technical Content Layout */
 .seo-divider {
     border: 0;
     height: 1px;
     background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
     margin: 40px 0;
 }
+
 .seo-content {
     text-align: left;
     max-width: 800px;
     margin: 0 auto;
-    color: #a0aec0; /* Un gris suave para que no compita con la herramienta */
+    color: #a0aec0;
     font-size: 0.95rem;
     line-height: 1.6;
 }
+
 .seo-content h2 {
     color: #fff;
     font-size: 1.4rem;
     margin-top: 30px;
     margin-bottom: 15px;
 }
+
 .faq-grid {
     margin-top: 20px;
 }
+
 .faq-item {
     margin-bottom: 25px;
 }
+
 .faq-item h3 {
-    color: var(--accent, #6366f1); /* Reemplaza por tu color de acento actual */
+    color: var(--accent, #6366f1);
     font-size: 1.1rem;
     margin-bottom: 8px;
 }
+
 .seo-content strong {
     color: #fff;
 }
 
-/* --- NUEVOS ESTILOS PARA REPOSITORIO GITHUB --- */
+/* Global Navigation Header */
 .main-header {
     width: 100%;
     padding: 15px 0;
@@ -243,9 +262,9 @@ input[type="file"] { display: none; }
 
 .header-container {
     width: 100%;
-    max-width: 1000px; /* Alineado con el ancho de tu contenido SEO */
+    max-width: 1000px;
     display: flex;
-    justify-content: flex-end; /* Lo empuja a la esquina superior derecha */
+    justify-content: flex-end;
     padding: 0 20px;
     box-sizing: border-box;
 }
@@ -254,28 +273,28 @@ input[type="file"] { display: none; }
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: #a0aec0; /* Gris sutil por defecto */
+    color: #a0aec0;
     text-decoration: none;
-    font-family: sans-serif; /* Cambiar por tu fuente si usas una específica */
+    font-family: sans-serif;
     font-size: 0.9rem;
     font-weight: 500;
     transition: color 0.2s ease, transform 0.2s ease;
     padding: 6px 12px;
     border-radius: 6px;
-    background-color: rgba(255, 255, 255, 0.03); /* Fondo casi invisible */
+    background-color: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .github-link:hover {
-    color: #ffffff; /* Brilla en blanco al pasar el mouse */
+    color: #ffffff;
     background-color: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-1px);
 }
 
-/* Ajuste móvil para que no se rompa el diseño */
+/* Responsive Navigation Adjustments */
 @media (max-width: 600px) {
     .header-container {
-        justify-content: center; /* Se centra en pantallas pequeñas */
+        justify-content: center;
     }
 }

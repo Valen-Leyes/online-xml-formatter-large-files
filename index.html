@@ -10,12 +10,12 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://w3.org viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
 </head>
 <body>
-
-    <!-- NUEVO: Header Minimalista con Enlace a GitHub -->
+    
+    <!-- Minimalist Navigation Header -->
     <header class="main-header">
         <div class="header-container">
             <a href="https://github.com/Valen-Leyes/online-xml-formatter-large-files" target="_blank" rel="noopener noreferrer" class="github-link">
-                <!-- Icono Oficial de GitHub (SVG) -->
+                <!-- Official GitHub SVG Icon -->
                 <svg height="20" viewBox="0 0 16 16" width="20" fill="currentColor">
                     <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.11 0-.68-.23-1.14-.51-1.39 1.71-.2 3.5-1.04 3.5-3.86 0-.8-.28-1.45-.75-1.97.08-.19.33-.94-.07-1.94 0 0-.62-.2-2.03.76a7.11 7.11 0 0 0-4 0C3.73 1.24 3.11 1.44 3.11 1.44c-.4 1-.15 1.75-.07 1.94-.47.52-.75 1.17-.75 1.97 0 2.81 1.78 3.65 3.49 3.85-.21.18-.41.52-.46 1.01-.42.2-1.49.52-2.14-.61-.13-.23-.37-.36-.6-.37-.24-.01-.31.02-.19.12.18.08.38.39.43.56.15.52.57.85 1.34.82.02.43.02.84.02.95 0 .21-.16.46-.55.38A8.013 8.013 0 0 1 1.6 8c0-4.42 3.58-8 8-8z"></path>
                 </svg>
@@ -28,13 +28,13 @@
         <h1>Online XML Formatter for Large Files</h1>
         <p class="subtitle">Format or minify massive XML configurations instantly and locally. Zero server uploads.</p>
         
-        <!-- ZONA DE CARGA -->
+        <!-- File Upload Area -->
         <label class="file-zone" id="dropZone">
             <span style="color: var(--accent); font-weight: bold;">Click to select</span> or drag your XML file here
             <input type="file" id="fileInput" accept=".xml">
         </label>
         
-        <!-- NUEVO: PANEL DE CONFIGURACIÓN DE RENDIMIENTO (Clave para SEO y Retención) -->
+        <!-- Optimization & Performance Settings Panel -->
         <div class="config-panel" id="configPanel">
             <h3>⚙️ Optimization Settings</h3>
             <div class="config-grid">
@@ -71,52 +71,52 @@
             <div class="progress-bar" id="progressBar"></div>
         </div>
         
-        <!-- MÓDULO DE MONETIZACIÓN Y DESCARGA DINÁMICA -->
+        <!-- Monetization & Download Actions -->
         <div class="donation-box" id="donationBox">
             <h3>🚀 File Formatted Successfully!</h3>
             <p>This tool is 100% open-source, private, and runs entirely on your hardware. If it saved your RAM and your time, consider supporting its maintenance!</p>
             
             <div class="flex-actions">
-                <a href="https://ko-fi.com/valenleyes" target="_blank" id="kofiBtn" class="btn-kofi">☕ Support on Ko-fi & Download</a>
+                <button id="kofiBtn" class="btn-kofi">☕ Support on Ko-fi & Download</button>
                 <button class="btn" id="downloadBtn">Download Free Anyway</button>
             </div>
+            
+            <p class="privacy-note">🔒 Privacy Secured: Processing happens 100% on your device. Your data never leaves your computer.</p>
         </div>
         
-        <p class="privacy-note">🔒 Privacy Secured: Processing happens 100% on your device. Your data never leaves your computer.</p>
-    </div>
-    
-    <hr class="seo-divider">
-    
-    <section class="seo-content">
-        <h2>Why Use This Browser-Based XML Formatter for Large Files?</h2>
-        <p>Traditional online XML beautifiers often crash, freeze your browser, or reject your upload when files exceed 10MB or 20MB. This happens because they attempt to load the entire text into your system's temporary memory simultaneously. Our tool resolves this limitation completely.</p>
-        <p>By utilizing advanced <strong>JavaScript Streams and binary processing</strong>, your computer processes your data in sequential chunks. This architectural approach allows you to format massive XML data pipelines (up to 400MB, 500MB, or even multi-gigabyte configurations) seamlessly in under 5 seconds without triggering out-of-memory errors.</p>
+        <hr class="seo-divider">
         
-        <h2>Frequently Asked Questions (FAQ)</h2>
-        <div class="faq-grid">
-            <div class="faq-item">
-                <h3>What is the maximum XML file size limit?</h3>
-                <p>There is <strong>no file size limit</strong>. Because the formatting architecture runs on a stream-based reader, the tool processes data sequentially instead of loading everything into the active browser memory at once. It can handle large XML datasets smoothly.</p>
-            </div>
+        <section class="seo-content">
+            <h2>Why Use This Browser-Based XML Formatter for Large Files?</h2>
+            <p>Traditional online XML beautifiers often crash, freeze your browser, or reject your upload when files exceed 10MB or 20MB. This happens because they attempt to load the entire text into your system's temporary memory simultaneously. Our tool resolves this limitation completely.</p>
+            <p>By utilizing advanced <strong>JavaScript Streams and binary processing</strong>, your computer processes your data in sequential chunks. This architectural approach allows you to format massive XML data pipelines (up to 400MB, 500MB, or even multi-gigabyte configurations) seamlessly in under 5 seconds without triggering out-of-memory errors.</p>
             
-            <div class="faq-item">
-                <h3>Is my data secure? Will my XML be uploaded to a server?</h3>
-                <p>Your data is 100% private and secure. All processing operations happen locally on your computer using web technologies. <strong>Zero bytes are uploaded to external servers</strong>, making this tool completely compliant with strict corporate privacy and data protection guidelines.</p>
+            <h2>Frequently Asked Questions (FAQ)</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What is the maximum XML file size limit?</h3>
+                    <p>There is <strong>no file size limit</strong>. Because the formatting architecture runs on a stream-based reader, the tool processes data sequentially instead of loading everything into the active browser memory at once. It can handle large XML datasets smoothly.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Is my data secure? Will my XML be uploaded to a server?</h3>
+                    <p>Your data is 100% private and secure. All processing operations happen locally on your computer using web technologies. <strong>Zero bytes are uploaded to external servers</strong>, making this tool completely compliant with strict corporate privacy and data protection guidelines.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What is the difference between Formatting and Minifying XML?</h3>
+                    <p>Formatting (Beautifying) breaks down your XML nodes into structured rows with precise nested indentation levels for human readability. Minifying removes all unnecessary whitespace, carriage returns, and line endings to minimize document file weight and optimize network transfer speeds.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Does this tool support cross-platform line endings?</h3>
+                    <p>Yes. You can switch between standard LF (\n) for lighter Unix/Linux systems and standard CRLF (\r\n) for legacy Windows compatibility via the performance optimization settings dropdown.</p>
+                </div>
             </div>
-            
-            <div class="faq-item">
-                <h3>What is the difference between Formatting and Minifying XML?</h3>
-                <p>Formatting (Beautifying) breaks down your XML nodes into structured rows with precise nested indentation levels for human readability. Minifying removes all unnecessary whitespace, carriage returns, and line endings to minimize document file weight and optimize network transfer speeds.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h3>Does this tool support cross-platform line endings?</h3>
-                <p>Yes. You can switch between standard LF (\n) for lighter Unix/Linux systems and standard CRLF (\r\n) for legacy Windows compatibility via the performance optimization settings dropdown.</p>
-            </div>
-        </div>
-    </section>
+        </section>
+        
+        <script type="module" src="src/js/main.js"></script>
+        
+    </body>
+    </html>
     
-    <script type="module" src="src/js/main.js"></script>
-    
-</body>
-</html>

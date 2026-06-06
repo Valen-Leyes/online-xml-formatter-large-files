@@ -1,4 +1,4 @@
-// Captura de elementos del DOM existentes
+// main.js - Core UI Orchestration Script
 const dropZone = document.getElementById('dropZone');
 const fileInput = document.getElementById('fileInput');
 const statusText = document.getElementById('statusText');
@@ -7,9 +7,46 @@ const progressContainer = document.getElementById('progressContainer');
 const donationBox = document.getElementById('donationBox');
 const downloadBtn = document.getElementById('downloadBtn');
 const kofiBtn = document.getElementById('kofiBtn');
-let formattedBlobUrl = null;
 
-// Captura de elementos del Panel de Configuración
+// Helper function to force-create the database and 'chunks' store safely
+function initStreamingDatabase() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open('XMLStreamingCacheDB', 1);
+        
+        request.onupgradeneeded = (e) => {
+            const db = e.target.result;
+            if (!db.objectStoreNames.contains('chunks')) {
+                db.createObjectStore('chunks', { keyPath: 'id' });
+                console.log("Database store 'chunks' created successfully.");
+            }
+        };
+        
+        request.onsuccess = (e) => {
+            const db = e.target.result;
+            db.close(); // Close immediately after verification
+            resolve();
+        };
+        
+        request.onerror = (e) => reject(e.target.error);
+    });
+}
+
+// Execute database initialization FIRST, then register the Service Worker agent cleanly
+if ('serviceWorker' in navigator) {
+    initStreamingDatabase()
+        .then(() => {
+            return navigator.serviceWorker.register('./sw.js');
+        })
+        .then(reg => {
+            // SUCCESS: The background layout is fully ready and stable
+            console.log("Service Worker and Database are fully synchronized.");
+            
+            // REMOVED THE window.location.reload() BLOCK TO PREVENT ACCIDENTAL REFRESHES
+            // The application is now safely initialized and anchored for large tasks
+        })
+        .catch(err => console.error('Initialization pipeline failed:', err));
+}
+
 const configPanel = document.getElementById('configPanel');
 const formatMode = document.getElementById('formatMode');
 const indentSpaces = document.getElementById('indentSpaces');
@@ -17,7 +54,6 @@ const lineEnding = document.getElementById('lineEnding');
 const indentGroup = document.getElementById('indentGroup');
 const lineGroup = document.getElementById('lineGroup');
 
-// Feedback visual en la UI al cambiar de modo
 formatMode.addEventListener('change', (e) => {
     const isMinify = e.target.value === 'minify';
     if (isMinify) {
@@ -33,7 +69,6 @@ formatMode.addEventListener('change', (e) => {
     }
 });
 
-// Eventos de Drag & Drop Visual
 ['dragenter', 'dragover'].forEach(eventName => {
     dropZone.addEventListener(eventName, (e) => {
         e.preventDefault();
@@ -69,47 +104,66 @@ function handleFile(file) {
         indentSpaces: parseInt(indentSpaces.value, 10),
         lineEnding: lineEnding.value === '\\r\\n' ? '\r\n' : '\n'
     };
-
-    // Reset de UI básico
+    
     statusText.innerText = `Reading ${file.name}...`;
     donationBox.style.display = 'none';
     dropZone.style.display = 'none';
     configPanel.style.display = 'none'; 
     progressContainer.style.display = 'block';
     
-    // Inicializar el Web Worker nativo usando módulos nativos
     const worker = new Worker(new URL('./xmlWorker.js', import.meta.url), { type: 'module' });
-
-    // Escuchar las respuestas del hilo de fondo
+    
     worker.onmessage = function (e) {
-        const { type, percentage, blob, error } = e.data;
-
+        const { type, percentage, error } = e.data;
+        
         if (type === 'PROGRESS') {
             progressBar.style.width = `${percentage}%`;
             statusText.innerText = `Processing... ${percentage}%`;
         } 
         
         else if (type === 'SUCCESS') {
-            if (formattedBlobUrl) URL.revokeObjectURL(formattedBlobUrl);
-            formattedBlobUrl = URL.createObjectURL(blob);
-            
-            const triggerDownload = () => {
-                const a = document.createElement('a');
-                a.href = formattedBlobUrl;
+            const finalSize = e.data.finalSize;
+
+            const executeDownloadPipeline = (shouldOpenKofi = false) => {
+                const streamId = `xml-stream-${Date.now()}`;
+                
+                worker.postMessage({ type: 'START_DOWNLOAD_STREAM', streamId: streamId });
+
                 const prefix = options.minify ? 'minified_' : 'formatted_';
-                a.download = `${prefix}${file.name}`;
-                a.click();
+                const filename = `${prefix}${file.name}`;
+                
+                const basePath = window.location.pathname.endsWith('/') ? window.location.pathname : window.location.pathname + '/';
+                
+                const downloadUrl = `${window.location.origin}${basePath}download-stream-xml?id=${streamId}&name=${encodeURIComponent(filename)}&size=${finalSize}`;
+                
+                // Trigger the download link instantly
+                const link = document.createElement('a');
+                link.href = downloadUrl;
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                // Delay opening the external tab slightly to secure background execution thread synchronization
+                if (shouldOpenKofi) {
+                    setTimeout(() => {
+                        window.open('https://ko-fi.com/valenleyes', '_blank', 'noopener,noreferrer');
+                    }, 400);
+                }
             };
             
-            downloadBtn.onclick = triggerDownload;
-            kofiBtn.onclick = () => setTimeout(triggerDownload, 1000);
+            kofiBtn.onclick = () => {
+                executeDownloadPipeline(true);
+            };
             
-            statusText.innerText = "";
+            downloadBtn.onclick = () => {
+                executeDownloadPipeline(false);
+            };
+            
+            statusText.innerText = "Ready to download!";
             progressContainer.style.display = 'none';
             donationBox.style.display = 'block';
-            
-            worker.terminate(); // Limpieza del hilo para liberar memoria RAM instantáneamente
-        } 
+        }
         
         else if (type === 'ERROR') {
             console.error(error);
@@ -120,7 +174,6 @@ function handleFile(file) {
             worker.terminate();
         }
     };
-
-    // Enviar el archivo y las opciones al hilo secundario
+    
     worker.postMessage({ file, options });
 }
