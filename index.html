@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online XML Formatter for Large Files | 100% Private & Fast</title>
-    <meta name="description" content="Format large XML files quickly and locally in your browser. Handles files over 400MB or 500MB in seconds. No file size limits, 100% private, no server uploads.">
+    <title>Online XML Formatter for Large Files | Up to 1.5GB+ Private & Fast</title>
+    <meta name="description" content="Format large XML files quickly and locally in your browser. Handles files over 1.5GB seamlessly. 100% private, zero server uploads.">
     <meta name="google-site-verification" content="Ns51gj2QD4hAm6zH8gsmNYFLC11-t841ASbPYl4Wa-Y" />
     <link rel="stylesheet" href="src/css/styles.css">
     <link rel="icon" type="image/png" href="public/favicon.ico?v=2">
@@ -89,13 +89,13 @@
         <section class="seo-content">
             <h2>Why Use This Browser-Based XML Formatter for Large Files?</h2>
             <p>Traditional online XML beautifiers often crash, freeze your browser, or reject your upload when files exceed 10MB or 20MB. This happens because they attempt to load the entire text into your system's temporary memory simultaneously. Our tool resolves this limitation completely.</p>
-            <p>By utilizing advanced <strong>JavaScript Streams and binary processing</strong>, your computer processes your data in sequential chunks. This architectural approach allows you to format massive XML data pipelines (up to 400MB, 500MB, or even multi-gigabyte configurations) seamlessly in under 5 seconds without triggering out-of-memory errors.</p>
+            <p>By utilizing advanced <strong>JavaScript Streams and binary processing</strong>, your computer processes your data in sequential chunks. This architectural approach allows you to format massive XML data pipelines (up to 400MB, 1.5GB, or larger depending on your browser's disk space quotas) smoothly without triggering out-of-memory errors.</p>
             
             <h2>Frequently Asked Questions (FAQ)</h2>
             <div class="faq-grid">
                 <div class="faq-item">
                     <h3>What is the maximum XML file size limit?</h3>
-                    <p>There is <strong>no file size limit</strong>. Because the formatting architecture runs on a stream-based reader, the tool processes data sequentially instead of loading everything into the active browser memory at once. It can handle large XML datasets smoothly.</p>
+                    <p>While our stream-based reader bypasses active RAM limitations, the real maximum size is bound by your <strong>browser's local IndexedDB quota</strong>. Most desktop environments running Chrome, Edge, or Firefox will comfortably process files up to 1.5GB or 2GB. Other browsers (like Safari) might encounter stricter local hardware limits around 1GB.</p>
                 </div>
                 
                 <div class="faq-item">
@@ -117,6 +117,5 @@
         
         <script type="module" src="src/js/main.js"></script>
         
-    </body>
-    </html>
-    
+</body>
+</html>
