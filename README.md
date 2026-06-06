@@ -1,8 +1,8 @@
 # Online XML Formatter for Large Files 🚀
 
-[![GitHub license](https://shields.io)](https://github.com/Valen-Leyes/online-xml-formatter-large-files/blob/main/LICENSE)
-[![GitHub stars](https://shields.io)](https://github.com/Valen-Leyes/online-xml-formatter-large-files/stargazers)
-[![Support me on Ko-fi](https://shields.io)](https://ko-fi.com/valenleyes)
+[![GitHub license](https://img.shields.io/github/license/Valen-Leyes/online-xml-formatter-large-files)](https://github.com/Valen-Leyes/online-xml-formatter-large-files/blob/main/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/Valen-Leyes/online-xml-formatter-large-files)](https://github.com/Valen-Leyes/online-xml-formatter-large-files/stargazers)
+[![Support me on Ko-fi](https://img.shields.io/badge/Support%20me%20on%20Ko--fi-F16061?logo=ko-fi&logoColor=white)](https://ko-fi.com/valenleyes)
 
 A high-performance, 100% private, and local browser-based **XML beautifier, formatter, and minifier**. Designed specifically to parse, format, and validate massive, heavy, and large XML files (up to 1.5GB+) without crashing your browser or locking the UI thread.
 
