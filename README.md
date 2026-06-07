@@ -1,6 +1,6 @@
 # Online XML Formatter for Large Files 🚀
 
-[![GitHub license](https://img.shields.io/github/license/Valen-Leyes/online-xml-formatter-large-files)](https://github.com/Valen-Leyes/online-xml-formatter-large-files/blob/main/LICENSE)
+[![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/Valen-Leyes/online-xml-formatter-large-files/blob/main/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/Valen-Leyes/online-xml-formatter-large-files)](https://github.com/Valen-Leyes/online-xml-formatter-large-files/stargazers)
 [![Support me on Ko-fi](https://img.shields.io/badge/Support%20me%20on%20Ko--fi-F16061?logo=ko-fi&logoColor=white)](https://ko-fi.com/valenleyes)
 
